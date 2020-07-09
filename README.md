@@ -45,9 +45,9 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false, add_index: true|
 ### Association
-- has_many :massage
-- has_many :group_id
-- has_many :group, through: :groups_users
+- has_many :massages
+- has_many :groups_id
+- has_many :groups, through: :groups_users
 
 ## groupsテーブル
 
