@@ -1,0 +1,28 @@
+.chat_main__message
+  .chat_main__message__header
+    .chat_main__message__header__group
+      .chat_main__message__header__groupName
+        hogehoge
+      .chat_main__message__header__memberList 
+        Member : hogehoge
+    .chat_main__message__header__editButton
+      = link_to 'edit', '#'
+  .chat_main__message__main_messages
+    .chat_main__message__main_messages__post
+      .chat_main__message__main_messages__postInfo
+        .chat_main__message__main_messages__postInfo__person 
+          test_user 
+        .chat_main__message__main_messages__postInfo__date
+          2020/7/14(Tue.) 11:40:03
+      .chat_main__message__main_messages__textInfo
+        .chat_main__message__main_messages__textInfo__content
+          Testhoge
+  .chat_main__message__footer
+    .input-box
+      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+      %label{class: "input-box__image"}
+        = icon("far", "image")
+        %input{type: "file", class: "input-box__image__file"}
+    %input{type: "submit", class: "submit-btn", value: "Send"}
+
+
