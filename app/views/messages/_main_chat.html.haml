@@ -2,27 +2,32 @@
   .chat_main__message__header
     .chat_main__message__header__group
       .chat_main__message__header__groupName
-        hogehoge
+        = @group.name
       .chat_main__message__header__memberList 
-        Member : hogehoge
+        Member :
+        .chat_main__message__header__memberLists
+          - @group.users.each do |user|
+            = user.name
     .chat_main__message__header__editButton
-      = link_to 'edit', '#'
+      = link_to edit_group_path(@group) do
+        Edit
   .chat_main__message__main_messages
     .chat_main__message__main_messages__post
-      .chat_main__message__main_messages__postInfo
-        .chat_main__message__main_messages__postInfo__person 
-          test_user 
-        .chat_main__message__main_messages__postInfo__date
-          2020/7/14(Tue.) 11:40:03
-      .chat_main__message__main_messages__textInfo
-        .chat_main__message__main_messages__textInfo__content
-          Testhoge
+      = render @messages
+    .chat_main__message__main_messages__postInfo
+      .chat_main__message__main_messages__postInfo__person 
+        test_user 
+      .chat_main__message__main_messages__postInfo__date
+        2020/7/14(Tue.) 11:40:03
+    .chat_main__message__main_messages__textInfo
+      .chat_main__message__main_messages__textInfo__content
+        Testhoge
   .chat_main__message__footer
-    .input-box
-      %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-      %label{class: "input-box__image"}
-        = icon("far", "image")
-        %input{type: "file", class: "input-box__image__file"}
-    %input{type: "submit", class: "submit-btn", value: "Send"}
-
+    = form_with model: [@group, @message], html: {class: "input-box"}, local: true do |f|
+      .input-box
+        = f.text_field :content , class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: 'input-box__image')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
 
