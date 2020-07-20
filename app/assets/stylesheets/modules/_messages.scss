@@ -30,7 +30,6 @@ body {
     color: #ffffff;
   }
   &__userName {
-    // color: #ffffff;
     font-size: 16px;
     font-weight: bold;
   }
@@ -137,11 +136,13 @@ body {
     &__postInfo {
     display: flex;
     }
+
     .chat_main__message__main_messages__postInfo__person {
       color: #333333;
       font-size: 16px;
       font-weight: bold;
     }
+
     .chat_main__message__main_messages__postInfo__date {
       color: #999999;
       font-size: 12px;
