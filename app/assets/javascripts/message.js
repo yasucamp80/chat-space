@@ -41,25 +41,24 @@ $(function(){
   }
 
   $('.chat_main__message__footer').on('submit', function(e){
-    e.preventDefault(); // console.logを用いてイベント発火しているか確認
+    e.preventDefault(); 
     let formData = new FormData(this);
-    let url = $(this).attr('action'));
+    let url = $(this).attr('action');
     $.ajax({
-      url: url,  //同期通信でいう『パス』
-      type: "POST",  //同期通信でいう『HTTPメソッド』
-      data: formData,  
+      url: url,
+      type: "POST",
+      data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
     })
     .done(function(post){
-      console.log(post)
-      $('.MessageField').append(html);      
+      $('.MessageField').append(html);
       $('form')[0].reset();
     })
     $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
     $('.form__submit').prop('disabled', false);
   });
-  .fail(function(){
-    alert('error');
-});
+  .fail(function() {
+    alert("メッセージ送信に失敗しました");
+  });
