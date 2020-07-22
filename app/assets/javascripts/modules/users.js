@@ -50,9 +50,6 @@ $(function() {
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
     $(this).parent().remove();
   });
-  $(".ChatMembers").on("click", ".ChatMember__remove", function() {
-    $(this).parent().remove();
-  });
   function addMember(name, id) {
     let html = `
                 <div class="ChatMember">
