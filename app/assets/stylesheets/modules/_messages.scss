@@ -130,34 +130,32 @@ body {
     padding: 35px 40px 0;
     height: calc(100vh - 100px - 90px);
     overflow: scroll;
-    &__post {
-    margin-bottom: 46px;
-    }
-    &__postInfo {
-    display: flex;
-    }
-
-    .chat_main__message__main_messages__postInfo__person {
-      color: #333333;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .chat_main__message__main_messages__postInfo__date {
-      color: #999999;
-      font-size: 12px;
-      padding-left: 10px;
-    }
   }
-  &__textInfo {
-    margin-top: 12px;
-  &__content {
-    color: #434a54;
-    font-size: 14px;
-  }
-  &__image{
-    height: 300px
-  }
+    .MessageBox{
+      margin-bottom: 46px;
+    }
+    .MessageInfo {
+      display: flex;
+      &__userName {
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: #999;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    .Message {
+      margin-top: 12px;
+      &__content {
+        color: #434a54;
+        font-size: 14px;
+      }
+      &__image{
+        height: 300px;
+      }
   }
   &__footer {
     box-sizing: border-box;
