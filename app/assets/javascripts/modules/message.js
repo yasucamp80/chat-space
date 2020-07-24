@@ -57,11 +57,11 @@ $(function(){
       $('.chat_main__message__main_messages').append(html);
       $('form')[0].reset();
       $('.chat_main__message__main_messages').animate({ scrollTop: $('.chat_main__message__main_messages')[0].scrollHeight});
-      $('.form__submit').prop('disabled', false);
+      $('.submit-btn').prop('disabled', false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-      $('.Form__submit').prop("disabled", false);
+      $('.submit-btn').prop('disabled', false);
     });
   });
 });
